@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="tzerocode.github.io">
-  <title>第一篇博客 | Tzerocode的个人博客</title>
+  <title>MySql篇 | Tzerocode的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="记录我个人的学习笔记测试测试">
+  <meta name="description" content="MySql的各种操作积累查询表的字段信息:desc table(表名); 查看数据库：show databases； 查看某个数据库：user database（数据库名）； 查看当前使用的表：show tables； 查询 表中的数据 select * from 表名; 插入数据 insert into 表名(字段1，字段2，…，字段n) values(值1，值2，…，值n); 例如： 1ins">
 <meta name="keywords" content="blog">
 <meta property="og:type" content="article">
-<meta property="og:title" content="第一篇博客">
+<meta property="og:title" content="MySql篇">
 <meta property="og:url" content="tzerocode.github.io&#x2F;2019&#x2F;12&#x2F;05&#x2F;%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2&#x2F;index.html">
 <meta property="og:site_name" content="Tzerocode的个人博客">
-<meta property="og:description" content="记录我个人的学习笔记测试测试">
+<meta property="og:description" content="MySql的各种操作积累查询表的字段信息:desc table(表名); 查看数据库：show databases； 查看某个数据库：user database（数据库名）； 查看当前使用的表：show tables； 查询 表中的数据 select * from 表名; 插入数据 insert into 表名(字段1，字段2，…，字段n) values(值1，值2，…，值n); 例如： 1ins">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-05T05:22:19.164Z">
+<meta property="og:updated_time" content="2019-12-05T13:27:49.900Z">
 <meta name="twitter:card" content="summary">
   
   
@@ -150,7 +150,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      第一篇博客
+      MySql篇
     </h1>
   
 
@@ -163,7 +163,65 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="记录我个人的学习笔记"><a href="#记录我个人的学习笔记" class="headerlink" title="记录我个人的学习笔记"></a>记录我个人的学习笔记</h2><h4 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h4><h4 id="测试-1"><a href="#测试-1" class="headerlink" title="测试"></a>测试</h4>
+        <h2 id="MySql的各种操作积累"><a href="#MySql的各种操作积累" class="headerlink" title="MySql的各种操作积累"></a>MySql的各种操作积累</h2><p>查询表的字段信息:desc table(表名);</p>
+<p>查看数据库：show databases；</p>
+<p>查看某个数据库：user database（数据库名）；</p>
+<p>查看当前使用的表：show tables；</p>
+<p>查询 表中的数据 select * from 表名;</p>
+<p>插入数据 insert into 表名(字段1，字段2，…，字段n) values(值1，值2，…，值n);</p>
+<p>例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">insert into dif(st_title,st_author,submission_data) values (&quot;学习&quot;,&quot;hello&quot;,&quot;2016-07-09&quot;);</span></pre></td></tr></table></figure>
+
+
+
+<p>查询语句</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">SELECT field1, field2,...fieldN FROM table_name1, table_name2...</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">[WHERE condition1 [AND [OR]] condition2.....</span></pre></td></tr></table></figure>
+
+<p>例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">select * from  where st_author &#x3D; &quot;怎么样&quot;;</span></pre></td></tr></table></figure>
+
+
+
+<p>mysql复制表的两种方式。</p>
+<p>第一、只复制表结构到新表</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">create table 新表 select * from 旧表 where 1&#x3D;2</span></pre></td></tr></table></figure>
+
+<p>或者</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">create table 新表 like 旧表</span></pre></td></tr></table></figure>
+
+<p>第二、复制表结构及数据到新表</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">create table新表 select * from 旧表</span></pre></td></tr></table></figure>
+
+<p>数据库备份</p>
+<p>mysqldump -hlocalhost -u boke -p hello &gt; /home/thacker/文档/mysql_backup/my_sql_dump.sql</p>
+<p>mysqldump -h数据库地址 -u 用户名 -p 回车后写密码 数据库名 &gt;(到的意思) 存放地址/备份数据名称.sql</p>
+<p>恢复数据库</p>
+<p>create database my_database;(为了直观看出恢复，创建了个表)</p>
+<p>mysql -u boke -p hello1(随意数据库名称) &lt; /home/thacker/文档/mysql_backup/my_sql_dump.sql</p>
+<p>mysql  -u 用户名 -p 回车后写密码 数据库名 &lt;(到的意思) 存放地址/备份数据名称.sql</p>
+<p>解决外健约束问题</p>
+<p>alter table 表名</p>
+<p>nocheck(不检查) constraint(约束) FK_约束的外键</p>
+<p>INSERT JOIN（内连接）</p>
+<p>检查两个表，连接两个表相同的字段信息</p>
+<p>select 字段名*n</p>
+<p>from student s</p>
+<p>insert join class c</p>
+<p>on s.class_id = c.id</p>
+<p>可选：加上<code>WHERE</code>子句、<code>ORDER BY</code>等子句。</p>
+<p>outer join(外连接)</p>
+<p>select 字段名*n</p>
+<p>from student s</p>
+<p>outer join class c</p>
+<p>on s.class_id = c.id</p>
+<h5 id="MySQL删除表操作（delete、truncate、drop的区别）"><a href="#MySQL删除表操作（delete、truncate、drop的区别）" class="headerlink" title="MySQL删除表操作（delete、truncate、drop的区别）"></a>MySQL删除表操作（delete、truncate、drop的区别）</h5><p>区别<br>1、表和索引所占空间：<br>　　当表被TRUNCATE 后，这个表和索引所占用的空间会恢复到初始大小；<br>　　DELETE操作不会减少表或索引所占用的空间；<br>　　DROP语句将表所占用的空间全释放掉。<br>　　<br>2、应用范围：<br>　　TRUNCATE 只能对table；<br>　　DELETE可以是table和view。</p>
+<p>3、执行速度：<br>　　drop &gt; truncate &gt; delete</p>
+<p>4、delete from删空表后，会保留一个空的页，truncate在表中不会留有任何页。</p>
+<p>5、DELETE语句执行删除的过程是每次从表中删除一行，并且同时将该行的删除操作作为事务记录在日志中保存以便进行进行回滚操作。<br>　　TRUNCATE TABLE 则一次性地从表中删除所有的数据并不把单独的删除操作记录记入日志保存，删除行是不能恢复的。并且在删除的过程中不会激活与表有关的删除触发器。执行速度快。</p>
+<p>6、当使用行锁执行 DELETE 语句时，将锁定表中各行以便删除。truncate始终锁定表和页，而不是锁定各行。</p>
+<p>7、如果有identity产生的自增id列，delete from后仍然从上次的数开始增加，即种子不变；<br>　使用truncate删除之后，种子会恢复到初始值。</p>
+<p>总结<br>1、delete 语句可以使用where子句实现部分删除，而truncate不可以，会将表中的整个数据全部删除，使用时，可以按需求选择；<br>2、如果想从表中删除所有的数据，不要使用delete，可以使用truncate语句，因为这样执行速度更快。truncate语句实际是删除原来的表然后重新建立一个新表；<br>3、在没有备份情况下，谨慎使用 drop 与 truncate。要删除表结构使用drop;<br>4、对于由 FOREIGN KEY 约束引用的表，不能使用 TRUNCATE TABLE，而应使用不带 WHERE 子句的 DELETE 语句。由于 TRUNCATE TABLE 不记录在日志中，所以它不能激活触发器。</p>
+<h4 id="通过个人的各方收集-以及各种瞎折腾-会不定期更新"><a href="#通过个人的各方收集-以及各种瞎折腾-会不定期更新" class="headerlink" title="通过个人的各方收集,以及各种瞎折腾,会不定期更新!!!"></a>通过个人的各方收集,以及各种瞎折腾,会不定期更新!!!</h4>
       
 
       
@@ -276,6 +334,20 @@
 </article>
 
   
+<nav id="article-nav">
+  
+    <a href="../Mongo%E7%AF%87/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Mongo篇
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -297,7 +369,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#记录我个人的学习笔记"><span class="toc-number">1.</span> <span class="toc-text">记录我个人的学习笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#测试"><span class="toc-number">1.0.1.</span> <span class="toc-text">测试</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#测试-1"><span class="toc-number">1.0.2.</span> <span class="toc-text">测试</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#MySql的各种操作积累"><span class="toc-number">1.</span> <span class="toc-text">MySql的各种操作积累</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#MySQL删除表操作（delete、truncate、drop的区别）"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">MySQL删除表操作（delete、truncate、drop的区别）</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#通过个人的各方收集-以及各种瞎折腾-会不定期更新"><span class="toc-number">1.0.1.</span> <span class="toc-text">通过个人的各方收集,以及各种瞎折腾,会不定期更新!!!</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
