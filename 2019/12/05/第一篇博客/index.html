@@ -20,7 +20,7 @@
 <meta name="twitter:card" content="summary">
   
   
-    <link rel="icon" href="/jump.png">
+    <link rel="icon" href="favicon.icon">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -146,24 +146,25 @@
             <article id="post-第一篇博客" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
-      <header class="article-header">
-        
+      <header class=" article-header">
+  
   
     <h1 class="article-title" itemprop="name">
       MySql篇
     </h1>
   
 
-        
-        <a href="" class="archive-article-date">
+  
+  <a href="" class="archive-article-date">
   	<time datetime="2019-12-05T05:11:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-05</time>
 </a>
-        
-      </header>
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="MySql的各种操作积累"><a href="#MySql的各种操作积累" class="headerlink" title="MySql的各种操作积累"></a>MySql的各种操作积累</h2><p>查询表的字段信息:desc table(表名);</p>
+    <h2 id="MySql的各种操作积累"><a href="#MySql的各种操作积累" class="headerlink" title="MySql的各种操作积累"></a>MySql的各种操作积累</h2><p>查询表的字段信息:desc table(表名);</p>
 <p>查看数据库：show databases；</p>
 <p>查看某个数据库：user database（数据库名）；</p>
 <p>查看当前使用的表：show tables；</p>
@@ -222,34 +223,35 @@
 <p>7、如果有identity产生的自增id列，delete from后仍然从上次的数开始增加，即种子不变；<br>　使用truncate删除之后，种子会恢复到初始值。</p>
 <p>总结<br>1、delete 语句可以使用where子句实现部分删除，而truncate不可以，会将表中的整个数据全部删除，使用时，可以按需求选择；<br>2、如果想从表中删除所有的数据，不要使用delete，可以使用truncate语句，因为这样执行速度更快。truncate语句实际是删除原来的表然后重新建立一个新表；<br>3、在没有备份情况下，谨慎使用 drop 与 truncate。要删除表结构使用drop;<br>4、对于由 FOREIGN KEY 约束引用的表，不能使用 TRUNCATE TABLE，而应使用不带 WHERE 子句的 DELETE 语句。由于 TRUNCATE TABLE 不记录在日志中，所以它不能激活触发器。</p>
 <h4 id="通过个人的各方收集-以及各种瞎折腾-会不定期更新"><a href="#通过个人的各方收集-以及各种瞎折腾-会不定期更新" class="headerlink" title="通过个人的各方收集,以及各种瞎折腾,会不定期更新!!!"></a>通过个人的各方收集,以及各种瞎折腾,会不定期更新!!!</h4>
-      
+    
 
-      
-        <div class="page-reward">
-          <a href="javascript:;" target="_blank" rel="noopener" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
+    
+    <div class="page-reward">
+      <a href="javascript:;" target="_blank" rel="noopener" class="page-reward-btn tooltip-top">
+        <div class="tooltip tooltip-east">
+          <span class="tooltip-item">
+            赏
+          </span>
+          <span class="tooltip-content">
+            <span class="tooltip-text">
+              <span class="tooltip-inner">
+                <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i
+                    class="icon icon-quo-right"></i></p>
+                <div class="reward-box">
+                  
+                  
+                </div>
               </span>
             </span>
-          </div>
-          </a>
+          </span>
         </div>
-      
+      </a>
     </div>
-    <div class="article-info article-info-index">
-      
-      
+    
+  </div>
+  <div class="article-info article-info-index">
+    
+    
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -261,7 +263,7 @@
 		</ul>
 	</div>
 
-      
+    
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -274,10 +276,10 @@
 	</div>
 
 
-      
+    
 
-      
-        
+    
+    
 <div class="share-btn share-icons tooltip-left">
   <div class="tooltip tooltip-east">
     <span class="tooltip-item">
@@ -327,13 +329,13 @@
 </div>
 
 <div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
 
-  
+
 <nav id="article-nav">
   
     <a href="../Mongo%E7%AF%87/" id="article-nav-newer" class="article-nav-link-wrap">
@@ -380,12 +382,12 @@
 
 
 
-  
-  
-  
 
-  
-  <div id="SOHUCS" sid="第一篇博客" ></div> 
+
+
+
+
+<div id="SOHUCS" sid="第一篇博客" ></div> 
 <script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
 <script type="text/javascript">
     window.changyan.api.config({
@@ -394,28 +396,35 @@
     });
 </script>
 </script>
-  
 
-  
-    <section id="comments">
-      <div id="disqus_thread"></div>
-        <script type="text/javascript">
-        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-        var disqus_shortname = 'true'; // required: replace example with your forum shortname
 
-        /* * * DON'T EDIT BELOW THIS LINE * * */
-        (function() {
-          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-      </script>
-      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a></noscript>
-    </section>
-  
 
-  
+<section id="comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'true'; // required: replace example with your forum shortname
 
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by
+      Disqus.</a></noscript>
+</section>
+
+
+
+
+
+
+      <!--添加代码开始-->
+      
+        <div class="declare" hidden="hidden"></div>
+      
 
           </div>
         </div>
@@ -540,11 +549,11 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">快捷键</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">Android</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">Android</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">快捷键</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -631,7 +640,7 @@ MathJax.Hub.Queue(function() {
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">一个爱熬夜的夜猫子&lt;br&gt;&lt;br&gt;脾气有点燥,但内心住着细腻体贴的人.热衷学习,比如学习vue cccv,react,nestjs&lt;br&gt;谢谢你花了那么长时间,阅读这毫无意义的语言,哈哈哈!</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">&lt;div style=&#34;margin:0 30px;&#34;&gt;一个爱熬夜的夜猫子&lt;/br&gt;脾气有点燥,但内心住着细腻体贴的人.热衷学习,比如学习vue cccv,react,nestjs&lt;/br&gt;谢谢你花了那么长时间,阅读这毫无意义的语言,哈哈哈!&lt;/div&gt;</div>
   	  	
     	</section>
     
